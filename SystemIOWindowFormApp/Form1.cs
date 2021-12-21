@@ -33,9 +33,16 @@ namespace SystemIOWindowFormApp
 
             foreach (var item in this.Controls)
             {
-                if (item is TextBox)
+                var theItem = item.GetType();
+                if (theItem.Name == "GroupBox" && ((GroupBox)item).Name=="groupBoxPersonelDetay")
                 {
-                    ((TextBox)item).ReadOnly = true;
+                    foreach (var subitems in ((GroupBox)item).Controls)
+                    {
+                        if (subitems is TextBox)
+                        {
+                            ((TextBox)subitems).ReadOnly = true;
+                        }
+                    }
                 }
             }
         }

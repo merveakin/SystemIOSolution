@@ -45,6 +45,7 @@ namespace BinarySerializationFormApp
             this.btnAc.TabIndex = 0;
             this.btnAc.Text = "AÇ";
             this.btnAc.UseVisualStyleBackColor = true;
+            this.btnAc.Click += new System.EventHandler(this.btnAc_Click);
             // 
             // btnKaydet
             // 
@@ -54,6 +55,7 @@ namespace BinarySerializationFormApp
             this.btnKaydet.TabIndex = 1;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // pictureBox1
             // 
