@@ -65,8 +65,21 @@ namespace BinarySerializationFormApp
                 //saveFileDialog1.Filter = "(*.*)|*.*";
                 saveFileDialog1.Filter = "(*.jpg)|*.jpg";
                 saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                //İsim boş gelecek...
                 //saveFileDialog1.FileName = string.Empty;
-                saveFileDialog1.FileName =Guid.NewGuid().ToString();
+                
+                //Guid ile oluşturulacak Tireleri var.
+                //saveFileDialog1.FileName =Guid.NewGuid().ToString();
+                //***************************************************************************************
+                
+                //Guid ' de tireleri yok etme
+                string dosyaAdiGuid = Guid.NewGuid().ToString();
+                //Oluşturulan Guid'in tirelerini sildik.
+                dosyaAdiGuid = dosyaAdiGuid.Replace("-","");
+
+                saveFileDialog1.FileName = dosyaAdiGuid;
+                //***************************************************************************************
+
 
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -86,6 +99,11 @@ namespace BinarySerializationFormApp
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
